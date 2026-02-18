@@ -1,0 +1,9 @@
+{
+  "name": "Copy of Noor - Islamic AI Companion",
+  "description": "An advanced Islamic AI assistant designed to guide Muslims in their spiritual journey, daily practice, and understanding of Islam with authentic scholarship and modern context.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

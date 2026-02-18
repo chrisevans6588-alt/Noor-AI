@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Noor - Islamic AI Companion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'void': '#09090b', // Deep Zinc
+              'obsidian': '#000000',
+              'glass': 'rgba(255, 255, 255, 0.03)',
+              'gold-primary': '#D4AF37',
+              'gold-dim': '#8A7E5E',
+              'surface': '#18181b', // Zinc 900
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              arabic: ['Amiri', 'serif'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+              'slide-up': 'slideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1)',
+              'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(40px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-void: #09090b;
+        --card-glass: rgba(255, 255, 255, 0.03);
+        --border-glass: rgba(255, 255, 255, 0.06);
+        --text-primary: #FFFFFF;
+        --text-secondary: #A1A1AA;
+        --accent-gold: #D4AF37;
+        --safe-area-bottom: env(safe-area-inset-bottom, 20px);
+        --safe-area-top: env(safe-area-inset-top, 0px);
+      }
+
+      body {
+        background-color: var(--bg-void);
+        color: var(--text-primary);
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        overflow: hidden; /* App-like feel */
+      }
+
+      /* Base Classes for Consistency */
+      .glass-panel {
+        background: var(--card-glass);
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+        border: 1px solid var(--border-glass);
+      }
+
+      .glass-card {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid var(--border-glass);
+        box-shadow: 0 4px 40px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+      }
+
+      .glass-card:active {
+        transform: scale(0.98);
+      }
+
+      /* Scrollbar Hiding */
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+      /* Safe Areas */
+      .pt-safe { padding-top: max(20px, var(--safe-area-top)); }
+      .pb-safe { padding-bottom: calc(80px + var(--safe-area-bottom)); }
+
+      /* Inputs */
+      input, textarea, select {
+        background: rgba(0, 0, 0, 0.2) !important;
+        border: 1px solid var(--border-glass) !important;
+        color: white !important;
+      }
+      input::placeholder, textarea::placeholder {
+        color: #52525B !important;
+      }
+      
+      /* Selection Color */
+      ::selection {
+        background: rgba(212, 175, 55, 0.3);
+        color: white;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "firebase/": "https://esm.sh/firebase@^12.9.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
